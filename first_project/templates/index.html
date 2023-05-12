@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>First App</title>
+  <link rel="stylesheet" type='text/css' href="{% static 'style.css' %}">
+</head>
+<body>
+  <h1>This is index.html</h1>
+  <img src="{% static 'photo.jpeg' %}" alt="Amrita Logo">
+
+
+  <h2>{{ message }}</h2>
+  <h2>This page is visited {{ count }} times.</h2>  
+  <p>Click <a href="http://127.0.0.1:8000/help">here</a> for help.</p>
+
+  <h3>Programs offered</h3>
+ <table border="1">
+   {% for r in program_rows %}
+     <tr>
+       <td>{{ r.title }}</td>
+       <td>{{ r.branch }}</td>
+     </tr>
+   {% endfor %}
+ </table>
+<h3>Students' list</h3>
+ <table border="1">
+   {% for s in student_rows %}
+     <tr>
+       <td>{{ s.name }}</td>
+       <td>{{ s.roll }}</td>
+       <td>{{ s.year }}</td>
+       <td>{{ s.dob }}</td>
+     </tr>
+   {% endfor %}
+ </table>
+ 
+</body>
+</html>
